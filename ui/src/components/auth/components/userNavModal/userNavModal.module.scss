@@ -1,0 +1,61 @@
+.auth_user_container {
+  position: relative;
+  &:hover {
+    .authorized_user_icon {
+      border: 2px solid var(--color-purple);
+    }
+    .user_nav {
+      display: block;
+    }
+  }
+  .authorized_user_icon {
+    width: 40px;
+    height: 40px;
+
+    padding: 4px;
+    border: 2px solid var(--color-light-gray);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .user_nav {
+    display: none;
+    text-align: right;
+
+    position: absolute;
+    right: 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+
+    border: 2px solid var(--color-purple);
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+    .user_nav_item {
+      .user_nav_label {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--color-black);
+        font-family: var(--font-Nunito-Sans-font);
+      }
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+    .log_out_button {
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: var(--color-purple);
+
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-white);
+      font-family: var(--font-Nunito-Sans-font);
+      cursor: pointer;
+
+      transition: scale 0.2s ease-in-out;
+      &:hover {
+        scale: 0.98;
+      }
+    }
+  }
+}

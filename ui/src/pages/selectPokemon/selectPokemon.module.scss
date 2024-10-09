@@ -1,0 +1,42 @@
+.select_pokemon_container {
+  position: relative;
+  padding: 100px 30px 0px;
+}
+.start_game_button {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: var(--color-purple);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+  font-size: 20px;
+  font-family: var(--font-Nunito-Sans-font);
+  font-weight: 600;
+  color: var(--color-white);
+  z-index: 4;
+
+  transition: scale 0.2s ease-in-out;
+  &:disabled {
+    bottom: -120px;
+    pointer-events: none;
+  }
+
+  &:hover {
+    scale: 0.98;
+  }
+}
+
+@media (width <= 600px) {
+  .start_game_button {
+    max-width: unset;
+    width: unset;
+    left: 30px;
+  }
+}

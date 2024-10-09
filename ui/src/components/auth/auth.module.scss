@@ -1,0 +1,26 @@
+.auth_button {
+  display: flex;
+
+  padding: 10px;
+  border-radius: 20%;
+  background-color: var(--color-purple);
+
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-white);
+  font-family: var(--font-Nunito-Sans-font);
+  cursor: pointer;
+
+  transition: scale 0.2s ease-in-out;
+  .auth_icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    path {
+      fill: var(--color-white);
+    }
+  }
+  &:hover {
+    scale: 0.98;
+  }
+}

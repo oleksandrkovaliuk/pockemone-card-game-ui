@@ -1,0 +1,125 @@
+.preparing_user_oponent_container {
+  padding-inline: 30px;
+
+  height: 100dvh;
+  position: relative;
+}
+.preview_wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.user_oponent_loading {
+  .loader {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+}
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-black);
+  font-family: var(--font-Nunito-Sans-font);
+  &.vs {
+    font-style: italic;
+  }
+}
+.description {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-black);
+  font-family: var(--font-Nunito-Sans-font);
+}
+
+.card_wrap {
+  .title {
+    margin-bottom: 10px;
+  }
+  .oponent_card_header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .regenerate_button {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: var(--color-purple);
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+      font-size: 15px;
+      font-family: var(--font-Nunito-Sans-font);
+      font-weight: 600;
+      color: var(--color-white);
+
+      transition: scale 0.2s ease-in-out;
+      &:hover {
+        scale: 0.98;
+      }
+    }
+  }
+}
+
+.ready_button_container {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+
+  width: 100%;
+  max-width: 300px;
+
+  transform: translateX(-50%);
+}
+.user_ready_button {
+  width: 100%;
+
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: var(--color-purple);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+  font-size: 15px;
+  font-family: var(--font-Nunito-Sans-font);
+  font-weight: 600;
+  color: var(--color-white);
+
+  transition: scale 0.2s ease-in-out;
+  &:hover {
+    scale: 0.98;
+  }
+}
+
+@media (width <= 600px) {
+  .preview_wrap {
+    display: grid;
+    align-items: unset;
+    justify-content: unset;
+    align-content: center;
+    gap: 20px;
+  }
+  .vs {
+    order: -1;
+  }
+
+  .card_wrap {
+    flex-grow: 1;
+    .oponent_card_header {
+      .title {
+        margin-bottom: unset;
+      }
+      flex-direction: column-reverse;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .ready_button_container {
+    width: unset;
+    max-width: unset;
+    transform: translateY(0);
+    left: 30px;
+    right: 30px;
+  }
+}

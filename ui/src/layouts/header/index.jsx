@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { Auth } from "../../components/auth";
 
@@ -10,13 +11,18 @@ export const Header = () => {
   return (
     <header className={styles.header_container}>
       <nav className={styles.nav_container}>
-        <a href="/" className={styles.pokemon_logo_link} title="back to home">
+        <Link
+          to="/"
+          replace
+          className={styles.pokemon_logo_link}
+          title="back to home"
+        >
           <img
             src={pokemon_logo}
             alt="pokemon logo"
             className={styles.pokemon_logo}
           />
-        </a>
+        </Link>
         <Auth />
       </nav>
     </header>

@@ -80,7 +80,7 @@ export const PrepareUserGame = () => {
       });
 
       socket.on("approved", (id) => {
-        navigate(`/fight-session?fight_id=${id}`);
+        navigate(`/fight-session?fight_id=${id}`, { replace: true });
       });
     } catch (error) {
       setError(error.message);

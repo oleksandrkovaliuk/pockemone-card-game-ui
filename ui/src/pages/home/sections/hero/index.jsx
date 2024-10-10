@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getUserSelector } from "../../../../store/selectors/auth/getUser";
@@ -26,12 +27,16 @@ export const Hero = () => {
             onClick={() => dispatch(openModal(true))}
             className={styles.start_game_button}
           >
-            Start
+            Login
           </button>
         ) : (
-          <a href="/select-pokemon" className={styles.start_game_button}>
+          <Link
+            to="/select-pokemon"
+            replace
+            className={styles.start_game_button}
+          >
             Start
-          </a>
+          </Link>
         )}
 
         <a

@@ -1,19 +1,17 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { store } from "../../store";
+import { checkSession } from "../../store/thunks/checkSession";
 import { getUserSelector } from "../../store/selectors/auth/getUser";
 import { openModal } from "../../store/slices/auth/isAuthModalOpen";
-import { authorizeUser, logOutUser } from "../../store/slices/auth/userSlice";
+
 import { isAuthModalOpenSelector } from "../../store/selectors/auth/isAuthModalOpen";
-import { verifyAndGetUser } from "../../store/api/endpoints/auth/verifyAndGetUser";
 
 import { LogInIcon } from "../../svgs/LoginIcon";
 
 import { AuthModal } from "./components/authModal";
 import { AuthorizedUserMenu } from "./components/userNavModal";
-import { sessionStorageKeys } from "../../lib/sessionStorageKeys";
 
 import styles from "./auth.module.scss";
 
@@ -24,39 +22,13 @@ export const Auth = () => {
   const { user } = useSelector(getUserSelector);
   const { isModalOpen } = useSelector(isAuthModalOpenSelector);
 
-  const handleVerifyAndGetUser = useCallback(async () => {
-    try {
-      const token = sessionStorage.getItem(sessionStorageKeys.AUTH_TOKEN);
-      if (!token) {
-        navigate("/");
-
-        return;
-      }
-
-      const { data: res, error } = await store.dispatch(
-        verifyAndGetUser.initiate({ token })
-      );
-
-      if (error || !res.user) {
-        navigate("/");
-        dispatch(logOutUser());
-        dispatch(openModal(true));
-      }
-
-      dispatch(
-        authorizeUser({
-          walletAddress: res.user.walletAddress,
-        })
-      );
-    } catch (error) {
-      navigate("/");
-      dispatch(openModal(true));
-    }
-  }, [dispatch, navigate]);
-
   useEffect(() => {
-    handleVerifyAndGetUser();
-  }, [handleVerifyAndGetUser]);
+    dispatch(checkSession())
+      .unwrap()
+      .catch(() => {
+        navigate("/", { replace: true });
+      });
+  }, [dispatch, navigate]);
 
   return (
     <>

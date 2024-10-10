@@ -24,7 +24,6 @@ export const AuthModal = () => {
   const [walletAddress, setWalletAddress] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Підключення до Metamask
   const connectWallet = async () => {
     if (window.ethereum) {
       const web3 = new Web3(window.ethereum);
@@ -35,7 +34,6 @@ export const AuthModal = () => {
     }
   };
 
-  // Отримання nonce з сервера
   const requestNonce = async () => {
     try {
       const { data: res, error } = await store.dispatch(

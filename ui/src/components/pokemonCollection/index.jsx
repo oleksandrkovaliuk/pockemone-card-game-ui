@@ -18,8 +18,9 @@ import { useDebounce } from "../../hooks/useDebounce";
 import { ObservationHandler } from "../../helpers/ObservationHandler";
 import { isIncludeSpecialCharacters } from "../../helpers/validationOnSpecialCharacters";
 
-import styles from "./pokemonCollection.module.scss";
 import { sessionStorageKeys } from "../../lib/sessionStorageKeys";
+
+import styles from "./pokemonCollection.module.scss";
 
 export const PokemonCollection = () => {
   const dispatch = useDispatch();
@@ -72,7 +73,7 @@ export const PokemonCollection = () => {
     sessionStorage.removeItem(sessionStorageKeys.SELECTED_USER_OPONENT);
   };
 
-  const debauncedSearch = useDebounce(handleFetchPokemonsBySearchReq, 200);
+  const debauncedSearch = useDebounce(handleFetchPokemonsBySearchReq, 350);
 
   const handleUploadMorePokemons = useCallback(() => {
     setPokemonLimit((prev) => prev + 10);

@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getUserSelector } from "../../../../store/selectors/auth/getUser";
@@ -12,7 +12,6 @@ import styles from "./userNavModal.module.scss";
 
 export const AuthorizedUserMenu = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const { user } = useSelector(getUserSelector);
 
@@ -30,17 +29,18 @@ export const AuthorizedUserMenu = () => {
           <span className={styles.user_nav_label}>{user?.walletAddress}</span>
         </li>
         <li className={styles.user_nav_item}>
-          <button
+          <Link
+            to="/"
+            replace
             title="Log out"
             onClick={() => {
-              navigate("/");
               dispatch(logOutUser());
               dispatch(setClearUserPokemonSelection());
             }}
             className={styles.log_out_button}
           >
             Log out
-          </button>
+          </Link>
         </li>
       </ul>
     </div>

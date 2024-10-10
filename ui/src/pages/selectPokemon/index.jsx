@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { userPokemonSelectionSelector } from "../../store/selectors/userGameEnvirment/userPokemonSelectionSelector";
@@ -38,15 +39,16 @@ export const SelectPokemonPage = () => {
       <div className={styles.select_pokemon_container}>
         <PokemonCollection />
         {selectedPokemon && (
-          <a
+          <Link
+            replace
             title="Start your game"
-            href="/prepare-user-game"
+            to="/prepare-user-game"
             disabled={!selectedPokemon}
             onClick={handleStartGame}
             className={styles.start_game_button}
           >
             Start
-          </a>
+          </Link>
         )}
       </div>
     </>

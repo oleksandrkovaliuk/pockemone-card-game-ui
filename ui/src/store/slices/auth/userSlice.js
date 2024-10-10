@@ -1,9 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { checkSession } from "../../thunks/checkSession";
+
 import { sessionStorageKeys } from "../../../lib/sessionStorageKeys";
 
 const initialState = {
   user: null,
+  error: null,
 };
 
 export const userSlice = createSlice({
@@ -19,6 +22,16 @@ export const userSlice = createSlice({
       sessionStorage.removeItem(sessionStorageKeys.SELECTED_USER_POKEMON);
       sessionStorage.removeItem(sessionStorageKeys.SELECTED_USER_OPONENT);
     },
+  },
+  extraReducers: (builder) => {
+    builder
+
+      .addCase(checkSession.fulfilled, (state, action) => {
+        state.user = action.payload;
+      })
+      .addCase(checkSession.rejected, (state, action) => {
+        state.error = action.payload;
+      });
   },
 });
 

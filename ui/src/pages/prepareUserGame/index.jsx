@@ -31,6 +31,7 @@ export const PrepareUserGame = () => {
     );
     return selectedUserOponent ? JSON.parse(selectedUserOponent) : null;
   });
+
   const [error, setError] = useState(null);
 
   const handleChoseOponentForUser = useCallback(async () => {
@@ -50,6 +51,10 @@ export const PrepareUserGame = () => {
           error?.message ||
             "Failed to fetch. Please refresh the page. Or try again later"
         );
+
+      if (!res.base.HP) {
+        return handleChoseOponentForUser();
+      }
 
       sessionStorage.setItem(
         sessionStorageKeys.SELECTED_USER_OPONENT,

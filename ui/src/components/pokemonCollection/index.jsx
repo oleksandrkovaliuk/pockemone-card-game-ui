@@ -19,6 +19,7 @@ import { ObservationHandler } from "../../helpers/ObservationHandler";
 import { isIncludeSpecialCharacters } from "../../helpers/validationOnSpecialCharacters";
 
 import styles from "./pokemonCollection.module.scss";
+import { sessionStorageKeys } from "../../lib/sessionStorageKeys";
 
 export const PokemonCollection = () => {
   const dispatch = useDispatch();
@@ -68,6 +69,7 @@ export const PokemonCollection = () => {
       return pokemon;
     });
     dispatch(setUserPokemonSelection(pokemon));
+    sessionStorage.removeItem(sessionStorageKeys.SELECTED_USER_OPONENT);
   };
 
   const debauncedSearch = useDebounce(handleFetchPokemonsBySearchReq, 200);

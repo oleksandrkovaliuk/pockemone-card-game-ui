@@ -117,8 +117,10 @@ export const FightPage = () => {
                 className={styles.attacked_message}
                 title={action.time}
               >
-                {action.fromPokemon} {action.type} {action.toPokemon} on{" "}
-                {action.damage}HP
+                <p>
+                  {action.fromPokemon} {action.type} {action.toPokemon} on{" "}
+                  {action.damage}HP
+                </p>
               </li>
             ))}
             <li className={styles.error}>{error}</li>
@@ -158,7 +160,7 @@ export const FightPage = () => {
             </div>
           </div>
         </div>
-        <div className={styles.atack_container}>
+        <div className={styles.attack_container}>
           <button
             disabled={turn !== "userPokemon" || fightInfo.winner}
             onClick={handleAttackAction}

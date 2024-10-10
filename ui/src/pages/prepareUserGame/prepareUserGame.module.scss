@@ -92,6 +92,10 @@
 }
 
 @media (width <= 600px) {
+  .preparing_user_oponent_container {
+    padding-block: 100px;
+    height: unset;
+  }
   .preview_wrap {
     display: grid;
     align-items: unset;
@@ -99,6 +103,7 @@
     align-content: center;
     gap: 20px;
   }
+
   .vs {
     order: -1;
   }

@@ -10,7 +10,7 @@
   }
 }
 
-.atack_container,
+.attack_container,
 .actions_container {
   position: fixed;
   left: 50%;
@@ -22,6 +22,8 @@
 .actions_container {
   top: 100px;
   max-width: 250px;
+  max-height: 50dvh;
+  overflow-y: auto;
   z-index: 1;
   .attacked_message {
     display: flex;
@@ -68,7 +70,7 @@
     }
   }
 }
-.atack_container {
+.attack_container {
   bottom: 30px;
   max-width: 300px;
 }
@@ -116,6 +118,21 @@
 }
 @media (width <= 900px) {
   .fight_container {
+    padding-block: 100px;
+    height: unset;
+    .actions_container {
+      position: static;
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      overflow: auto;
+      max-width: unset;
+      transform: translateY(0);
+      margin-bottom: 10px;
+      .attacked_message {
+        min-width: 300px;
+      }
+    }
     .players_card_container {
       display: grid;
       align-items: unset;
@@ -123,6 +140,15 @@
       align-content: center;
       place-content: center;
       gap: 20px;
+    }
+
+    .attack_container {
+      left: 30px;
+      right: 30px;
+
+      width: unset;
+      max-width: unset;
+      transform: translateX(0);
     }
   }
 }

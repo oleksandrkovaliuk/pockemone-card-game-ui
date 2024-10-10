@@ -1,11 +1,10 @@
-
 # Pokémon Card Game
 
 A Pokémon card game built using **React.js**, **Node.js (Express.js)**, **MongoDB (Mongoose)**, and **WebSockets (Socket.io)**.
 
 ## Features
 
-- **Secure and Optimized Communication**: 
+- **Secure and Optimized Communication**:
   Established a secure communication channel between the front-end and back-end by configuring secure headers, CORS settings, and including Bearer tokens for user authentication.
 
 - **Integrated State Management**:
@@ -16,6 +15,7 @@ A Pokémon card game built using **React.js**, **Node.js (Express.js)**, **Mongo
 
 - **MongoDB Models**:
   Designed and implemented three MongoDB models for handling:
+
   - **Pokémon**
   - **Users**
   - **Fight Sessions**
@@ -31,3 +31,64 @@ A Pokémon card game built using **React.js**, **Node.js (Express.js)**, **Mongo
 
 - **Real-time Actions and AI Auto-Attacks**:
   On the fight session page, implemented real-time user actions along with automatic attacks performed by an AI-controlled opponent.
+
+# Project Setup Instructions
+
+To set up the Pokémon Card Game project, follow these steps:
+
+## 1. Clone the Backend Repository
+
+First, clone the backend repository using the following link:
+
+```
+git clone https://github.com/oleksandrkovaliuk/pockemone-card-game-be.git
+```
+
+Navigate into the backend project directory:
+
+```
+cd pockemone-card-game-be
+```
+
+## 2. Install Dependencies
+
+For both the frontend and backend, you will need to install the necessary dependencies. Run the following command inside both directories:
+
+### Frontend:
+
+Navigate to the frontend folder and run:
+
+```
+npm install
+```
+
+### Backend:
+
+Inside the backend folder (after cloning the repository), run:
+
+```
+npm install
+```
+
+## 3. Start the Application
+
+Once the dependencies are installed, you can start both the frontend and backend servers.
+
+### Frontend:
+
+```
+npm run start
+```
+
+### Backend:
+
+```
+npm run start
+```
+
+## 4. Environment Variables
+
+For the environment variables, please contact me via:
+
+- **Telegram**: [@okovaliukk](https://t.me/okovaliukk)
+- **Email**: okovaliukk@proton.me

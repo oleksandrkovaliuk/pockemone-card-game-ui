@@ -2,6 +2,8 @@
 
 A Pokémon card game built using **React.js**, **Node.js (Express.js)**, **MongoDB (Mongoose)**, and **WebSockets (Socket.io)**.
 
+Deployed using Versel for Front-end and Render for Back-end
+
 ## Features
 
 - **Secure and Optimized Communication**:

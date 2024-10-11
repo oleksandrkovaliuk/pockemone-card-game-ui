@@ -10,7 +10,6 @@ export const ApiUrlsAuth = {
 
 export const ApiUrlsGameEnvirment = {
   getCurrentFight: "/game/get/current/fight",
-  attackAction: "/game/process/atack",
   generateUserOponent: "/game/generate/user/opponent",
 };
 export const ApiTagsTypes = ["POCKEMONS_LIST", "USER", "USER_FIGHT"];

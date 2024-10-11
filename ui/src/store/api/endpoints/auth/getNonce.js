@@ -3,11 +3,9 @@ import { ApiUrlsAuth } from "../../lib/constants";
 
 const getNonceApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    getNonce: builder.mutation({
+    getNonce: builder.query({
       query: ({ walletAddress }) => ({
-        url: ApiUrlsAuth.getNonce,
-        method: "POST",
-        body: { walletAddress },
+        url: `${ApiUrlsAuth.getNonce}?walletAddress=${walletAddress}`,
       }),
     }),
   }),

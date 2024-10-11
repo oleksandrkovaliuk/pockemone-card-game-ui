@@ -16,9 +16,7 @@ export const checkSession = createAsyncThunk(
     }
 
     try {
-      const { data: res, error } = await dispatch(
-        verifyAndGetUser.initiate({ token })
-      );
+      const { data: res, error } = await dispatch(verifyAndGetUser.initiate());
 
       if (error || !res.user) {
         dispatch(logOutUser());

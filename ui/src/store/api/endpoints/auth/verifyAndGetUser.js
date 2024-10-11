@@ -3,16 +3,14 @@ import { ApiUrlsAuth } from "../../lib/constants";
 
 export const verifyAndGetUserApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    verifyAndGetUser: builder.mutation({
-      query: ({ token }) => ({
+    verifyAndGetUser: builder.query({
+      query: () => ({
         url: ApiUrlsAuth.verifyAndGetUser,
-        method: "POST",
-        body: token,
       }),
     }),
   }),
 });
 
-export const { useVerifyAndGetUserMutation } = verifyAndGetUserApi;
+export const { useVerifyAndGetUserQuery } = verifyAndGetUserApi;
 export const { verifyAndGetUser } = verifyAndGetUserApi.endpoints;
 export default verifyAndGetUserApi;

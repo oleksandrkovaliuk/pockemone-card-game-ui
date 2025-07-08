@@ -87,10 +87,3 @@ npm run start
 ```
 npm run start
 ```
-
-## 4. Environment Variables
-
-For the environment variables, please contact me via:
-
-- **Telegram**: [@okovaliukk](https://t.me/okovaliukk)
-- **Email**: okovaliukk@proton.me
